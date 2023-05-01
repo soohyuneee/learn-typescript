@@ -61,7 +61,8 @@ const obj2: Dropdown<string> = { value: 'a', selected: false };
 // 	text.forEach((text) => console.log(text));
 // 	return text;
 // }
-// logTextLength(['hi', 'abc']);
+// logTextLength<string>(['hi', 'abc']);
+// logTextLength<string>('hi');
 
 // 제네릭의 타입 제한 2 - 정의된 타입 이용하기
 interface LengthType {
@@ -72,6 +73,7 @@ function logTextLength<T extends LengthType>(text: T): T {
 	return text;
 }
 logTextLength('a');
+// logTextLength(10);
 logTextLength({ length: 10 });
 
 // 제네릭의 타입 제한 3 - keyof
